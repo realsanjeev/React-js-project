@@ -1,0 +1,135 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.header-container{
+    display: flex;
+    background: linear-gradient(to right, #ae3131, #00ff00);
+    padding: 10px;
+    /* line-height: 2px; */
+    /* height: 60px; */
+}
+.header-image{
+    height: 50px;
+    width: 100px;
+    display: flex;
+}
+.header-container > h3 {
+    font-size: 30px;
+    font-family: sans-serif;
+}
+.project-info {
+    position: absolute;
+    right: 0px;
+    margin: 30px;
+}
+
+/* footer  */
+.footer {
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    background-color: gray;
+    width:100%
+}.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-field {
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .generate-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .meme {
+    position: relative;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    border-radius: 3px;
+}
+
+.upper-text{
+    position: absolute;
+    width: 80%;
+    top: 10%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+} 
+
+.lower-text{
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
+}
