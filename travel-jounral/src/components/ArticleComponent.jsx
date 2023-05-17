@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function MainComponent(props) {
+    const limit = 100
   return (
     <>
       {console.log(props.item.location)}
@@ -23,7 +24,10 @@ export default function MainComponent(props) {
             </small>
           </div>
           <div className="news-card__details-wrapper">
-            <p className="news-card__excerpt">{props.item.desc}&hellip;</p>
+            <p className="news-card__excerpt">
+                {console.log(props.item.desc.length)}
+                {props.item.desc.length > limit ? props.item.desc.slice(0, limit): props.item.length}&hellip;
+            </p>
           </div>
         </div>
       </div>

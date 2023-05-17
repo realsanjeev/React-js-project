@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 * {
   box-sizing: border-box;
@@ -31,10 +31,13 @@ body {
   flex: 1;
   min-width: 290px;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .news-card::before {
@@ -127,6 +130,8 @@ body {
   background-color: aqua;
   width: 100%;
   padding: 3px;
+  position: inherit;
+  bottom: 0;
 }
 
 .footer > p {
@@ -170,14 +175,8 @@ nav {
   margin-top: 20px;
 }
 
-
 a:not(.no-color-change) {
   /* Styles for regular links */
   color: inherit;
   /* Add other desired styles */
-}
-
-a.no-color-change {
-  /* Styles for links with no color change */
-  /* Override the color or add other specific styles */
 }
