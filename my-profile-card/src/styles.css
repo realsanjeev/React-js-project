@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+body {
+    background-image: url("https://www.svgbackgrounds.com/wp-content/uploads/2021/05/protruding-squares-orange-background.png");
+    color: white;
+}
+
+.container {
+    display: flex;
+    max-width: 500px;
+    margin: 30px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    flex-wrap: wrap;
+}
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profile{
+    align-items: center;
+    justify-content: center; /* Added property */
+    font-family: 'Open Sans',serif;
+}
+.profile-pic{
+    height: 300px;
+    align-items: center;
+    justify-content: center; /* Added property */
+}
+.profile > h1 {
+    font-size: 28px;
+}
+.contact{
+    display: flex;
+    margin: 5px;
+    background-color: gray;
+    border-radius: 20px;
+    padding: 5px;
+}
+.social-contact {
+    display: flex;
+    list-style: none;
+    position: sticky;
+    align-items: center;
+    justify-content: center; 
+    padding-right: 3px;
+}
+
+.contact-logo {
+    height: 30px;
+    width: 30px;
+    padding: 15px;
+}
+
