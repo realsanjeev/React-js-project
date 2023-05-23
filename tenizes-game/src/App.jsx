@@ -8,17 +8,28 @@ import Die from "./components/Die";
 import "./styles.css";
 
 export default function App() {
-  const [diceSequence, setDiceSequence] = useState(initialRoll());
+  const [diceSequence, setDiceSequence] = useState(initialRoll);
+  const [countRoll, setCountRoll] = useState(0);
+  const [bestScore, setBestScore] = useState(Number(localStorage.getItem("bestScore")) || Infinity);
   const [tenizes, setTenizes] = useState(false);
+  
+  useEffect(() => {
+    const notHeldDie = diceSequence.filter((die) => !die.isHeld);
+    const firstValue = diceSequence[0].value;
+    const notSameDie = diceSequence.filter((die) => die.value !== firstValue);
+    const isTenizes = notHeldDie.length === 0 && notSameDie.length === 0;
+    setTenizes(isTenizes);
+  }, [diceSequence]);
+  
+  useEffect(() => {
+    if (tenizes) {
+      setBestScore((prevBestScore) => {
+        return countRoll < prevBestScore ? countRoll : prevBestScore;
+      });
+    }
+  }, [tenizes, countRoll]);
+  
 
-  useEffect(()=>{
-    const notHeldDie = diceSequence.filter(die=>die.isHeld === false)
-    const firstValue = diceSequence[0].value
-    const notSameDie = diceSequence.filter(die=>die.value !== firstValue)
-    notHeldDie.length === 0 && notSameDie.length===0
-     ? setTenizes(true)
-     : setTenizes(false)
-  }, [diceSequence])
 
   // ramdomly generate dice number between 0 to 6
   function initialRoll() {
@@ -40,9 +51,17 @@ export default function App() {
   });
 
   function rollEffect() {
-    setDiceSequence((prevSequence) => prevSequence.map((die)=> {
-      return die.isHeld ? die: {...die, value: Math.ceil(Math.random()*6)}
-    }));
+    if (!tenizes){
+      setCountRoll(prevCount=>prevCount+1)
+      setDiceSequence((prevSequence) => prevSequence.map((die)=> {
+        return die.isHeld ? die: {...die, value: Math.ceil(Math.random()*6)}
+      }));
+    } else {
+      setDiceSequence(initialRoll())
+      setTenizes(false)
+      setCountRoll(0)
+    }
+    
   }
 
   function holdDie(id) {
@@ -50,6 +69,7 @@ export default function App() {
       return die.id===id ? {...die, isHeld: !die.isHeld} : die
     }));
   }
+
   
   return (
     <div className="main">
@@ -61,9 +81,17 @@ export default function App() {
       <button className="roll-die" 
               onClick={rollEffect}>
         {tenizes ? "New Game" : "Roll"}
+
       </button>
+      
       </div>
-      {tenizes && <h2 className="win">You win<Confetti/></h2>}
+      {tenizes && 
+      <div>
+      <Confetti/>
+        <h2 className="win">You win</h2>
+        <h3>Total Roll: {countRoll}</h3>
+        <h3>Best Score: {bestScore}</h3>
+      </div>}
       
     </div>
     
