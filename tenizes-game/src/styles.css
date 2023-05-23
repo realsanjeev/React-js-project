@@ -1,0 +1,90 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-color: rgb(46, 46, 52);
+}
+.main {
+  background-color: #ffffffd9;
+  height: 76lvh;
+  color: rgb(29, 31, 33);
+  margin: 45px;
+  border-radius: 30px;
+  padding: 30px;
+  font-family: "Courier New", Courier, monospace;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-heading {
+  display: flex;
+  margin-top: 40px;
+  font-size: 40px;
+}
+
+.game-desc {
+  display: flex;
+  margin-top: 20px;
+  color: #6e6e6ed9;
+  max-width: 400px;
+  height: 100%;
+}
+.game-desc > p {
+  justify-content: center;
+}
+
+.grid-container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  max-width: 470px;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin: 5px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 6px;
+  font-size: 40px;
+  box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.16);
+}
+
+.roll-die {
+  background-color: rgba(37, 52, 214, 0.814);
+  border-radius: 7px;
+  width: max-content;
+  padding: 10px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border: none;
+}
+.roll-die:hover {
+  background-color: #4b3e8e;
+  cursor: pointer;
+}
+.roll-die:focus {
+  border: none;
+}
+.roll-die:active {
+  background-color: #5a40dd;
+  box-shadow: 2px 3px;
+}
+.select-btn {
+  background-color: rgb(12, 238, 12);
+}
+.win{
+  font-size: 40px;
+}
