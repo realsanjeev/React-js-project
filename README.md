@@ -1,2 +1,6 @@
-# React-js-project
-Profile card, meme generator, and more project using React js
+# React-JS-project
+The projects are:
+- meme-generator
+- my-profile-card
+- note-app-using-markdown
+- travel-jounral
