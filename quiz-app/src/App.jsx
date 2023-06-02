@@ -48,7 +48,7 @@ export default function App() {
   if (question.length > 0) {
     quizTest = question.map((item) => {
       return (
-        <QuestionView item={item} key={item.id} handleAnswer={handleAnswer} />
+        <QuestionView item={item} key={item.id} handleAnswer={handleAnswer} userAns={answer}/>
       );
     });
   }
@@ -57,8 +57,7 @@ export default function App() {
     // event.preventDefault();
     const newChoice = {
       id: id,
-      choice: choice,
-      isChecked: true,
+      choice: choice
     };
     let flag = false;
     const newAnswerArray = [];
@@ -89,8 +88,6 @@ export default function App() {
     }
     setResult(true);
 
-    console.log(count);
-    console.log(result);
   }
   function handleRequiz() {
     setResult(false);
